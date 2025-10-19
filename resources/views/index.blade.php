@@ -90,20 +90,69 @@
                         <h3 class="text-4xl font-bold text-white mb-4">
                             Sobre Mim
                         </h3>
-                        <p class="leading-relaxed">
+                        <p class="leading-relaxed text-2xl">
                             Olá! Sou Vinicius Goulart, desenvolvedor full stack com mais de 5 anos de experiência.
+                            <br>
                             Assim como no futebol, acredito que o trabalho em equipe e a estratégia são fundamentais
                             para alcançar grandes resultados, fazendo uso de tecnologias como
                         </p>
-                        <div class="grid grid-cols-6 md:grid-cols-4 gap-4 mt-6">
+                        <div class="grid grid-cols-6 md:grid-cols-4 gap-6 mt-6">
                             <!-- Docker -->
-                            <div class="tech-icon bg-blue-600 rounded-lg p-3 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                                <img src="{{ asset('storage/logos/docker.svg') }}" alt="Docker Logo" class="w-10 h-10 object-cover">
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/docker.svg') }}" 
+                                    alt="Docker Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
                             </div>
-                                                
+
                             <!-- PHP -->
-                            <div class="tech-icon bg-indigo-600 rounded-lg p-3 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                                <img src="{{ asset('storage/logos/php.svg') }}" alt="PHP Logo" class="w-10 h-10 object-cover">
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/php.svg') }}" 
+                                    alt="PHP Logo" 
+                                    class="absolute -top-4 w-18 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- Laravel -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/laravel.svg') }}" 
+                                    alt="Laravel Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- Shopify -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/shopify.svg') }}" 
+                                    alt="Shopify Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- WordPress -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/wordpress.svg') }}" 
+                                    alt="WordPress Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- Vue -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/vuejs.svg') }}" 
+                                    alt="Vue Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- Git -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/git.svg') }}" 
+                                    alt="Git Logo" 
+                                    class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
+                            </div>
+                            <!-- MySQL -->
+                            <div class="group relative flex flex-col items-center">
+                                <div class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300"></div>
+                                <img src="{{ asset('storage/logos/mysql.svg') }}" 
+                                    alt="MySQL Logo" 
+                                    class="absolute -top-4 w-28 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
                             </div>
                         </div>
                     </div>

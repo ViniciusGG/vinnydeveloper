@@ -309,9 +309,9 @@
                                 class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-white bg-gray-800/50 backdrop-blur-md border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer resize-none"></textarea>
                             <label for="message"
                                 class="absolute text-sm text-white duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 
-        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
-        peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-blue-500 
-        backdrop-blur-md bg-gray-800/30 px-1 rounded-sm">
+                                        peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 
+                                        peer-focus:scale-75 peer-focus:-translate-y-4 peer-focus:text-blue-500 
+                                        backdrop-blur-md bg-gray-800/30 px-1 rounded-sm">
                                 Sua mensagem
                             </label>
                         </div>
@@ -321,6 +321,9 @@
                             <span id="submitText">Enviar Mensagem</span>
                             <span id="loadingText" class="hidden">Enviando...</span>
                         </button>
+                        
+                        <!-- Mensagem de feedback -->
+                        <div id="formMessage" class="hidden mt-4 text-sm text-center"></div>
                     </form>
                 </div>
             </div>
@@ -343,46 +346,68 @@
     </footer>
 
     <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
+        const form = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const submitBtn = document.getElementById('submitBtn');
+        const submitText = document.getElementById('submitText');
+        const loadingText = document.getElementById('loadingText');
+
+        form.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
-            const submitBtn = document.getElementById('submitBtn');
-            const submitText = document.getElementById('submitText');
-            const loadingText = document.getElementById('loadingText');
-            
-            // Show loading state
+
+            formMessage.classList.add('hidden');
+            document.querySelectorAll('.error-text').forEach(el => el.remove());
+
             submitBtn.disabled = true;
+            submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
             submitText.classList.add('hidden');
             loadingText.classList.remove('hidden');
-            
-            const formData = new FormData(this);
-            
-            fetch('{{ route("contact.store") }}', {
-                method: 'POST',
-                body: formData,
-                headers: {
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
+
+            const formData = new FormData(form);
+
+            try {
+                const response = await fetch('{{ route("contact.store") }}', {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                        'Accept': 'application/json'
+                    }
+                });
+
+                const data = await response.json();
+
                 if (data.success) {
-                    alert(data.message);
-                    this.reset();
+                    formMessage.textContent = data.message;
+                    formMessage.className = 'text-green-400 mt-4 text-sm text-center';
+                    formMessage.classList.remove('hidden');
+                    form.reset();
+                } else if (data.errors) {
+                    Object.entries(data.errors).forEach(([field, messages]) => {
+                        const input = form.querySelector(`[name="${field}"]`);
+                        if (input) {
+                            const error = document.createElement('p');
+                            error.textContent = messages[0];
+                            error.className = 'error-text text-red-400 text-sm mt-1';
+                            input.closest('.relative').appendChild(error);
+                        }
+                    });
                 } else {
-                    alert('Erro ao enviar mensagem. Tente novamente.');
+                    formMessage.textContent = data.message || 'Erro ao enviar mensagem.';
+                    formMessage.className = 'text-red-400 mt-4 text-sm text-center';
+                    formMessage.classList.remove('hidden');
                 }
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('Erro ao enviar mensagem. Tente novamente.');
-            })
-            .finally(() => {
-                // Reset button state
+            } catch (error) {
+                console.error(error);
+                formMessage.textContent = 'Erro ao enviar mensagem. Tente novamente.';
+                formMessage.className = 'text-red-400 mt-4 text-sm text-center';
+                formMessage.classList.remove('hidden');
+            } finally {
                 submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
                 submitText.classList.remove('hidden');
                 loadingText.classList.add('hidden');
-            });
+            }
         });
     </script>
 @endsection

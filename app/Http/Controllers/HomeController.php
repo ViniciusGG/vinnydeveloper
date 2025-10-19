@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Project;
 use App\Models\Contact;
+use App\Models\Project;
+use App\Http\Requests\ContactRequest;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -14,20 +17,28 @@ class HomeController extends Controller
         return view('index', compact('projects'));
     }
 
-    public function storeContact(Request $request)
+    public function storeContact(ContactRequest $request): JsonResponse
     {
-        $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
-            'subject' => 'required|string|max:255',
-            'message' => 'required|string|max:1000',
-        ]);
+        try {
+            Contact::create($request->validated());
 
-        Contact::create($request->all());
+            return response()->json([
+                'success' => true,
+                'message' => 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
+            ]);
+            Log::info('Contato enviado com sucesso: ' . $request->all());
+        } catch (ValidationException $e) {
+            return response()->json([
+                'success' => false,
+                'errors' => $e->errors(),
+            ], 422);
+        } catch (\Exception $e) {
+            Log::error('Erro ao salvar contato: ' . $e->getMessage());
 
-        return response()->json([
-            'success' => true,
-            'message' => 'Mensagem enviada com sucesso!'
-        ]);
+            return response()->json([
+                'success' => false,
+                'message' => 'Erro interno do servidor. Tente novamente mais tarde.'
+            ], 500);
+        }
     }
 }

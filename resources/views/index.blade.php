@@ -175,92 +175,42 @@
                     </p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <!-- Projeto 1 -->
+                    @forelse($projects as $project)
                     <div
                         class="bg-gray-800/50  rounded-xl overflow-hidden border border-gray-200 hover:border-football-blue/40  transition-all duration-300 group shadow-lg hover:shadow-xl card-hover ">
                         <div
-                            class="aspect-video bg-gradient-to-br from-football-blue/20 /20   flex items-center justify-center gradient-animate">
-                            <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🏆</span>
+                            class="aspect-video bg-gradient-to-br from-football-blue/20 to-green-600/20   flex items-center justify-center gradient-animate">
+                            @if($project->icon)
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">{{ $project->icon }}</span>
+                            @else
+                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🚀</span>
+                            @endif
                         </div>
                         <div class="p-6">
                             <h3 class="text-xl font-bold mb-3 group-hover:text-football-blue transition-colors">
-                                Sistema de Gestão Esportiva</h3>
+                                {{ $project->title }}</h3>
                             <p class="mb-4 leading-relaxed">
-                                Plataforma completa para gestão de times de futebol, incluindo escalação,
-                                estatísticas e acompanhamento de desempenho.
+                                {{ $project->description }}
                             </p>
                             <div class="flex flex-wrap gap-2 mb-4">
+                                @foreach($project->technologies as $tech)
                                 <span
-                                    class="px-3 py-1 bg-football-blue/20  text-football-blue rounded-full text-sm hover:bg-football-blue/30 transition-colors">Laravel</span>
-                                <span
-                                    class="px-3 py-1 bg-football-yellow/20  text-football-yellow rounded-full text-sm hover:bg-football-yellow/30 transition-colors">React</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100  text-gray-600  rounded-full text-sm hover:bg-gray-200  transition-colors">MySQL</span>
+                                    class="px-3 py-1 bg-football-blue/20  text-football-blue rounded-full text-sm hover:bg-football-blue/30 transition-colors">{{ $tech }}</span>
+                                @endforeach
                             </div>
-                            <a href="#"
+                            @if($project->link)
+                            <a href="{{ $project->link }}" target="_blank"
                                 class="text-football-blue hover:text-football-yellow transition-colors font-semibold group-hover:translate-x-2 inline-block">
                                 Ver Projeto →
                             </a>
+                            @endif
                         </div>
                     </div>
-
-                    <!-- Projeto 2 -->
-                    <div
-                        class="bg-gray-800/50  rounded-xl overflow-hidden border border-gray-200 hover:border-football-blue/40  transition-all duration-300 group shadow-lg hover:shadow-xl card-hover ">
-                        <div
-                            class="aspect-video bg-gradient-to-br from-football-yellow/20 to-green-600/20   flex items-center justify-center gradient-animate">
-                            <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🎯</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 group-hover:text-football-blue transition-colors">
-                                API de Estatísticas</h3>
-                            <p class="mb-4 leading-relaxed">
-                                API RESTful para coleta e análise de dados esportivos em tempo real,
-                                utilizada por aplicativos móveis e web.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-football-blue/20  text-football-blue rounded-full text-sm hover:bg-football-blue/30 transition-colors">Node.js</span>
-                                <span
-                                    class="px-3 py-1 bg-football-yellow/20  text-football-yellow rounded-full text-sm hover:bg-football-yellow/30 transition-colors">Express</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100  text-gray-600  rounded-full text-sm hover:bg-gray-200  transition-colors">MongoDB</span>
-                            </div>
-                            <a href="#"
-                                class="text-football-blue hover:text-football-yellow transition-colors font-semibold group-hover:translate-x-2 inline-block">
-                                Ver Projeto →
-                            </a>
-                        </div>
+                    @empty
+                    <div class="col-span-full text-center py-12">
+                        <p class="text-gray-400 text-lg">Nenhum projeto encontrado.</p>
                     </div>
-
-                    <!-- Projeto 3 -->
-                    <div
-                        class="bg-gray-800/50  rounded-xl overflow-hidden border border-gray-200 hover:border-football-blue/40  transition-all duration-300 group shadow-lg hover:shadow-xl card-hover ">
-                        <div
-                            class="aspect-video bg-gradient-to-br from-green-600/20 to-football-blue/20   flex items-center justify-center gradient-animate">
-                            <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🚀</span>
-                        </div>
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-3 group-hover:text-football-blue transition-colors">
-                                Dashboard de Performance</h3>
-                            <p class="mb-4 leading-relaxed">
-                                Dashboard interativo para monitoramento de métricas de performance
-                                de jogadores e times com gráficos em tempo real.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span
-                                    class="px-3 py-1 bg-football-blue/20  text-football-blue rounded-full text-sm hover:bg-football-blue/30 transition-colors">Vue.js</span>
-                                <span
-                                    class="px-3 py-1 bg-football-yellow/20  text-football-yellow rounded-full text-sm hover:bg-football-yellow/30 transition-colors">D3.js</span>
-                                <span
-                                    class="px-3 py-1 bg-gray-100  text-gray-600  rounded-full text-sm hover:bg-gray-200  transition-colors">PostgreSQL</span>
-                            </div>
-                            <a href="#"
-                                class="text-football-blue hover:text-football-yellow transition-colors font-semibold group-hover:translate-x-2 inline-block">
-                                Ver Projeto →
-                            </a>
-                        </div>
-                    </div>
+                    @endforelse
                 </div>
             </div>
         </div>
@@ -320,10 +270,11 @@
                 </div>
 
                 <div class="bg-gray-900/50  rounded-xl p-8 border border-football-blue/20 ">
-                    <form class="space-y-6">
+                    <form id="contactForm" class="space-y-6">
+                        @csrf
                         <div class="grid md:grid-cols-2 gap-6">
                             <div class="relative">
-                                <input id="name" name="name" type="text" autocomplete="name"
+                                <input id="name" name="name" type="text" autocomplete="name" required
                                     class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-white bg-gray-800 border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" " />
                                 <label for="name"
@@ -333,7 +284,7 @@
                             </div>
 
                             <div class="relative">
-                                <input id="email" name="email" type="email" autocomplete="email"
+                                <input id="email" name="email" type="email" autocomplete="email" required
                                     class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-white bg-gray-800 border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                     placeholder=" " />
                                 <label for="email"
@@ -344,7 +295,7 @@
                         </div>
 
                         <div class="relative">
-                            <input id="subject" name="subject" type="text" autocomplete="off"
+                            <input id="subject" name="subject" type="text" autocomplete="off" required
                                 class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-white bg-gray-800 border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                                 placeholder=" " />
                             <label for="subject"
@@ -354,7 +305,7 @@
                         </div>
 
                         <div class="relative">
-                            <textarea id="message" name="message" rows="5" autocomplete="off" placeholder=" "
+                            <textarea id="message" name="message" rows="5" autocomplete="off" placeholder=" " required
                                 class="block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-white bg-gray-800/50 backdrop-blur-md border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer resize-none"></textarea>
                             <label for="message"
                                 class="absolute text-sm text-white duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 
@@ -365,9 +316,10 @@
                             </label>
                         </div>
 
-                        <button type="submit"
+                        <button type="submit" id="submitBtn"
                             class="w-full bg-gradient-to-r from-football-blue hover:to-football-blue text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300">
-                            Enviar Mensagem
+                            <span id="submitText">Enviar Mensagem</span>
+                            <span id="loadingText" class="hidden">Enviando...</span>
                         </button>
                     </form>
                 </div>
@@ -389,4 +341,48 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+            
+            // Show loading state
+            submitBtn.disabled = true;
+            submitText.classList.add('hidden');
+            loadingText.classList.remove('hidden');
+            
+            const formData = new FormData(this);
+            
+            fetch('{{ route("contact.store") }}', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert(data.message);
+                    this.reset();
+                } else {
+                    alert('Erro ao enviar mensagem. Tente novamente.');
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Erro ao enviar mensagem. Tente novamente.');
+            })
+            .finally(() => {
+                // Reset button state
+                submitBtn.disabled = false;
+                submitText.classList.remove('hidden');
+                loadingText.classList.add('hidden');
+            });
+        });
+    </script>
 @endsection

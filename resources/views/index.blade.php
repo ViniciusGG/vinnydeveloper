@@ -1,7 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="particles" id="particles"></div>
 
     <!-- Header -->
     <header class="header-footer-bg-pattern backdrop-blur-sm fixed w-full top-0 z-50 border-b border-football-blue/20">
@@ -10,12 +9,12 @@
                 <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#inicio" class="text-gray-300 hover:text-football-blue transition-colors duration-300">INÍCIO</a>
-                    <a href="#sobre"
+                    <a href="#hero-section" class="text-gray-300 hover:text-football-blue transition-colors duration-300">INÍCIO</a>
+                    <a href="#about-section"
                         class="text-gray-300 hover:text-football-blue transition-colors duration-300">SOBRE</a>
-                    <a href="#projetos"
+                    <a href="#projects-section"
                         class="text-gray-300 hover:text-football-blue transition-colors duration-300">PROJETOS</a>
-                    <a href="#contato"
+                    <a href="#contact-section"
                         class="text-gray-300 hover:text-football-blue transition-colors duration-300">CONTATO</a>
                 </div>
             </div>
@@ -62,11 +61,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Floating decorative elements -->
-        {{-- <div class="absolute top-20 left-10 w-4 h-4 bg-football-blue rounded-full opacity-30 float-animation"></div>
-        <div class="absolute top-32 right-16 w-3 h-3 bg-football-yellow rounded-full opacity-40 float-delayed"></div>
-        <div class="absolute bottom-32 left-20 w-2 h-2 bg-green-400 rounded-full opacity-50 float-animation"></div> --}}
     </section>
 
     <!-- About Section -->

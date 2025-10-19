@@ -5,18 +5,45 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 @theme {
     --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
         "Segoe UI Symbol", "Noto Color Emoji";
-    --color-football-blue: #09A4C2;
-    --color-football-yellow: #fbbf24;
+    --font-roboto: "Roboto", sans-serif;
+    --color-football-blue: #09a4c2;
     --color-football-dark: #1e1e1e;
     --color-football-dark-light: #2e2e2e;
 }
+.header-footer-bg-pattern {
+    background-image: repeating-linear-gradient(
+        45deg,
+        rgba(9, 164, 194, 0.05) 0,
+        rgba(9, 164, 194, 0.05) 1px,
+        transparent 1px,
+        transparent 20px
+    );
+}
 
-.football-pattern {
-    background-image: radial-gradient(circle at 2px 2px, rgba(34, 197, 94, 0.3) 1px, transparent 0);
-    background-size: 40px 40px;
+.home-bg-pattern {
+    background-image: radial-gradient(circle, #09a4c2 2px, transparent 2px);
+    background-size: 50px 50px;
+
+    -webkit-animation: bg-scrolling-reverse 0.92s infinite linear;
+    -moz-animation: bg-scrolling-reverse 0.92s infinite linear;
+    -o-animation: bg-scrolling-reverse 0.92s infinite linear;
+    animation: bg-scrolling-reverse 0.92s infinite linear;
+}
+
+@keyframes bg-scrolling-reverse {
+    100% {
+        background-position: 50px 50px;
+    }
+}
+
+.bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(9, 164, 194, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
 }
 
 /* Ensure smooth transitions for theme changes */
@@ -26,10 +53,6 @@
     transition-duration: 300ms;
 }
 
-/* Custom dark mode styles for better visibility */
-.dark .football-pattern {
-    background-image: radial-gradient(circle at 2px 2px, rgba(34, 197, 94, 0.1) 1px, transparent 0);
-}
 
 /* Ensure form elements work properly in dark mode */
 input:focus,
@@ -114,15 +137,6 @@ select:focus {
     100% {
         border-color: #22c55e;
     }
-}
-
-.typing-animation {
-    overflow: hidden;
-    white-space: nowrap;
-    border-right: 2px solid #22c55e;
-    animation:
-        typing 3.5s steps(40, end),
-        blink 1s infinite step-end 3.5s;
 }
 
 /* Parallax effect */
@@ -256,5 +270,33 @@ select:focus {
     100% {
         transform: translateY(-100px) rotate(360deg);
         opacity: 0;
+    }
+}
+
+.typewriter {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid #22c55e;
+    animation:
+        typing 3.5s steps(40, end),
+        blink 1s step-end 3.5s infinite,
+        hide-border 0.1s 3.5s forwards;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+/* Hide border at the end */
+@keyframes hide-border {
+    to {
+        border-right: none;
     }
 }

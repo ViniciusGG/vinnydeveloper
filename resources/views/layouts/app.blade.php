@@ -13,7 +13,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     @endif
 </head>
-<body class="bg-football-dark text-white font-['Inter']">
+<body class="bg-football-dark text-white font-roboto">
     <main class="w-full max-w-screen m-auto">
         @yield('content')
     </main>

@@ -4,6 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="{{ $description ?? 'Sou Vinicius Goulart Gouveia, desenvolvedor full stack com mais de 6 anos de experiência...' }}">
+    <meta name="keywords" content="desenvolvedor, full stack, Laravel, Shopify, portfolio, Vinicius Goulart Gouveia">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Vinicius Goulart Gouveia">
     <title>Vinicius Goulart Gouveia - Desenvolvedor Full Stack</title>
     <link rel="icon" href="{{ asset('storage/images/favicon.ico') }}" type="image/x-icon">
 

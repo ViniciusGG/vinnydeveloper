@@ -38,7 +38,7 @@
                         </span>
                         <h1
                             class="text-4xl md:text-5xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-white via-football-blue  bg-clip-text text-transparent gradient-animate">
-                            <span class="typing-animation">Vinicius Goulart</span>
+                            <span class="typing-animation">Vinicius Goulart Gouveia</span>
                         </h1>
                         <p class="text-lg md:text-2xl lg:text-4xl mb-8 font-medium typewriter">
                             Desenvolvedor Full Stack

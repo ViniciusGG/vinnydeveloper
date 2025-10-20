@@ -14,6 +14,10 @@
     --color-football-dark: #1e1e1e;
     --color-football-dark-light: #2e2e2e;
 }
+html {
+    scroll-behavior: smooth;
+}
+
 .header-footer-bg-pattern {
     background-image: repeating-linear-gradient(
         45deg,

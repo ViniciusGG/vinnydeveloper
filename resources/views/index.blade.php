@@ -5,7 +5,7 @@
     <header class="header-footer-bg-pattern backdrop-blur-sm fixed w-full top-0 z-50 border-b border-football-blue/20">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART</span>
+                <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART GOUVEIA</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#hero-section"
@@ -81,7 +81,7 @@
                             Sobre Mim
                         </h3>
                         <p class="leading-relaxed md:text-2xl text-lg">
-                            Olá! Sou Vinicius Goulart, desenvolvedor full stack com mais de 6 de experiência.
+                            Olá! Sou Vinicius Goulart Gouveia, desenvolvedor full stack com mais de 6 de experiência.
                             <br>
                             Acredito que o trabalho em equipe e a estratégia são fundamentais
                             para alcançar grandes resultados, fazendo uso de tecnologias como
@@ -90,7 +90,7 @@
                             <!-- Docker -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/docker.svg') }}" alt="Docker Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -99,7 +99,7 @@
                             <!-- PHP -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/php.svg') }}" alt="PHP Logo"
                                     class="absolute -top-4 w-18 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -107,7 +107,7 @@
                             <!-- Laravel -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl  md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/laravel.svg') }}" alt="Laravel Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -115,7 +115,7 @@
                             <!-- Shopify -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/shopify.svg') }}" alt="Shopify Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -123,7 +123,7 @@
                             <!-- WordPress -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/wordpress.svg') }}" alt="WordPress Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -131,7 +131,7 @@
                             <!-- Vue -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/vuejs.svg') }}" alt="Vue Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -139,7 +139,7 @@
                             <!-- Git -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/git.svg') }}" alt="Git Logo"
                                     class="absolute -top-4 w-16 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -147,7 +147,7 @@
                             <!-- MySQL -->
                             <div class="group relative flex flex-col items-center">
                                 <div
-                                    class="bg-[#1e242a] rounded-2xl w-24 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
+                                    class="bg-[#1e242a] rounded-2xl md:w-24 w-18 h-10 mt-5 shadow-lg group-hover:shadow-xl transition-all duration-300">
                                 </div>
                                 <img src="{{ asset('storage/logos/mysql.svg') }}" alt="MySQL Logo"
                                     class="absolute -top-4 w-28 h-20 object-contain transition-transform duration-300 group-hover:scale-110" />
@@ -337,7 +337,7 @@
                 <div class="flex flex-col md:flex-row items-center justify-between">
                     <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART</span></div>
                     <div class="text-gray-400 text-center md:text-right">
-                        <p>&copy; 2025 Vinicius Goulart. Todos os direitos reservados.</p>
+                        <p>&copy; 2025 Vinicius Goulart Gouveia. Todos os direitos reservados.</p>
                         <p class="mt-2">Feito com ❤️ e muito ☕</p>
                     </div>
                 </div>

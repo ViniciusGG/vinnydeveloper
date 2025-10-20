@@ -27,7 +27,7 @@
             <div class="flex flex-col lg:flex-row items-center justify-center gap-8 lg:gap-12">
                 <div class="order-1 lg:order-2 w-full max-w-md lg:max-w-lg">
                     <img src="{{ asset('storage/images/me.png') }}" alt="Vinicius Goulart"
-                        class="w-full h-auto object-cover">
+                        class="w-full h-auto object-cover mt-20 md:mt-0">
                 </div>
 
                 <div class="order-2 lg:order-1 max-w-4xl text-center lg:text-left">
@@ -66,7 +66,7 @@
     </section>
 
     <!-- About Section -->
-    <section id="about-section" class="py-20 bg-pattern">
+    <section id="about-section" class="md:py-20 py-10 bg-pattern">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
@@ -80,7 +80,7 @@
                         <h3 class="text-4xl font-bold text-white mb-4">
                             Sobre Mim
                         </h3>
-                        <p class="leading-relaxed text-2xl">
+                        <p class="leading-relaxed md:text-2xl text-lg">
                             Olá! Sou Vinicius Goulart, desenvolvedor full stack com mais de 6 de experiência.
                             <br>
                             Acredito que o trabalho em equipe e a estratégia são fundamentais
@@ -160,7 +160,7 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects-section" class="py-20 bg-pattern">
+    <section id="projects-section" class="md:py-20 py-10 bg-pattern">
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-16 ">
@@ -217,7 +217,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact-section" class="py-20 bg-pattern">
+    <section id="contact-section" class="md:py-20 py-10 bg-pattern">
         <div class="container mx-auto px-6">
             <div class="max-w-4xl mx-auto text-center">
                 <h2

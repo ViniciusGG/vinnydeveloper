@@ -179,9 +179,9 @@
                     <div
                         class="bg-gray-800/50  rounded-xl overflow-hidden border border-gray-200 hover:border-football-blue/40  transition-all duration-300 group shadow-lg hover:shadow-xl card-hover ">
                         <div
-                            class="aspect-video bg-gradient-to-br from-football-blue/20 to-green-600/20   flex items-center justify-center gradient-animate">
-                            @if($project->icon)
-                                <span class="text-4xl group-hover:scale-110 transition-transform duration-300">{{ $project->icon }}</span>
+                            class="aspect-video bg-white flex items-center justify-center gradient-animate">
+                            @if($project->image)
+                                <img src="{{ asset('storage/images/' . $project->image) }}" alt="{{ $project->title }}" class="w-full h-full object-contain">
                             @else
                                 <span class="text-4xl group-hover:scale-110 transition-transform duration-300">🚀</span>
                             @endif

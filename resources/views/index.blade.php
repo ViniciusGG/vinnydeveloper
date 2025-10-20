@@ -5,7 +5,7 @@
     <header class="header-footer-bg-pattern backdrop-blur-sm fixed w-full top-0 z-50 border-b border-football-blue/20">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART GOUVEIA</span>
+                <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GG</span>
                 </div>
                 <div class="hidden md:flex space-x-8">
                     <a href="#hero-section"
@@ -335,7 +335,7 @@
         <div class="container mx-auto px-6">
             <div class="max-w-6xl mx-auto">
                 <div class="flex flex-col md:flex-row items-center justify-between">
-                    <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GOULART</span></div>
+                    <div class="text-2xl font-bold"> VINICIUS <span class="text-football-blue">GG</span></div>
                     <div class="text-gray-400 text-center md:text-right">
                         <p>&copy; 2025 Vinicius Goulart Gouveia. Todos os direitos reservados.</p>
                         <p class="mt-2">Feito com ❤️ e muito ☕</p>

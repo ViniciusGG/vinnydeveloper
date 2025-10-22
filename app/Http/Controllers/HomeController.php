@@ -8,6 +8,8 @@ use App\Http\Requests\ContactRequest;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Validation\ValidationException;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\ContactMail;
 
 class HomeController extends Controller
 {
@@ -20,7 +22,8 @@ class HomeController extends Controller
     public function storeContact(ContactRequest $request): JsonResponse
     {
         try {
-            Contact::create($request->validated());
+            $contact = Contact::create($request->validated());
+            Mail::to('vinicius1663.vg@gmail.com')->send(new ContactMail($request->validated()));
 
             return response()->json([
                 'success' => true,

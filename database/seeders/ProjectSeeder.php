@@ -28,7 +28,7 @@ class ProjectSeeder extends Seeder
                 'description' => 'Aplicativo que auxilia governos locais a monitorar a poluição utilizando dados de satélite em Portugal. Fui responsável pelo desenvolvimento do Backend.',
                 'image' => 'azulfy.svg',
                 'technologies' => ['Laravel', 'API'],
-                'link' => 'https://www.jeronimomartins.com/',
+                'link' => 'https://www.azulfy.com/',
                 'is_featured' => true,
                 'order' => 2
             ],

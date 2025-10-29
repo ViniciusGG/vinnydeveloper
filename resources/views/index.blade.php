@@ -81,7 +81,7 @@
                             Sobre Mim
                         </h3>
                         <p class="leading-relaxed md:text-2xl text-lg">
-                            Olá! Sou Vinicius Goulart Gouveia, desenvolvedor full stack com mais de 6 de experiência.
+                            Olá! Sou Vinicius Goulart Gouveia, desenvolvedor full stack com mais de 6 anos de experiência.
                             <br>
                             Acredito que o trabalho em equipe e a estratégia são fundamentais
                             para alcançar grandes resultados, fazendo uso de tecnologias como
